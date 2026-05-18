@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+
+    <title>Promocoes Femininas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+            font-family:'Poppins', sans-serif;
+            overflow:hidden;
+
+            background:
+            linear-gradient(
+                135deg,
+                #ff4d8d,
+                #ff7eb3,
+                #ffc2d1
+            );
+        }
+
+        .blur1,
+        .blur2{
+            position:absolute;
+            border-radius:50%;
+            filter:blur(80px);
+            opacity:0.35;
+        }
+
+        .blur1{
+            width:300px;
+            height:300px;
+            background:#ffffff;
+            top:-100px;
+            left:-80px;
+        }
+
+        .blur2{
+            width:350px;
+            height:350px;
+            background:#ff99bb;
+            bottom:-120px;
+            right:-100px;
+        }
+
+        .card{
+            position:relative;
+            z-index:2;
+
+            width:100%;
+            max-width:520px;
+
+            padding:45px 35px;
+
+            border-radius:30px;
+
+            background:rgba(255,255,255,0.18);
+
+            border:1px solid rgba(255,255,255,0.25);
+
+            backdrop-filter:blur(15px);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.15);
+
+            text-align:center;
+
+            animation:entrada 0.8s ease;
+        }
+
+        .emoji{
+            font-size:70px;
+            margin-bottom:10px;
+        }
+
+        h1{
+            font-size:38px;
+            font-weight:700;
+            color:white;
+            margin-bottom:15px;
+            line-height:1.2;
+        }
+
+        .subtitulo{
+            font-size:17px;
+            color:#fff;
+            opacity:0.95;
+            line-height:1.7;
+            margin-bottom:30px;
+        }
+
+        .beneficios{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+            margin-bottom:35px;
+        }
+
+        .item{
+            background:rgba(255,255,255,0.18);
+            padding:14px;
+            border-radius:14px;
+            color:white;
+            font-size:14px;
+            font-weight:500;
+        }
+
+        .botao{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+
+            width:100%;
+
+            padding:18px 20px;
+
+            border-radius:16px;
+
+            text-decoration:none;
+
+            background:white;
+            color:#ff2e74;
+
+            font-size:18px;
+            font-weight:700;
+
+            transition:0.3s;
+
+            box-shadow:
+                0 10px 25px rgba(255,255,255,0.25);
+        }
+
+        .botao:hover{
+            transform:translateY(-4px) scale(1.02);
+        }
+
+        .rodape{
+            margin-top:22px;
+            color:white;
+            opacity:0.9;
+            font-size:13px;
+        }
+
+        @keyframes entrada{
+
+            from{
+                opacity:0;
+                transform:translateY(30px) scale(0.95);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0) scale(1);
+            }
+
+        }
+
+        @media(max-width:600px){
+
+            h1{
+                font-size:30px;
+            }
+
+            .beneficios{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="blur1"></div>
+    <div class="blur2"></div>
+
+    <div class="card">
+
+        <div class="emoji">
+            💖
+        </div>
+
+        <h1>
+            Canal de Promoções
+        </h1>
+
+        <p class="subtitulo">
+            Receba diariamente ofertas incriveis de moda,
+            maquiagem, skincare, bolsas, acessorios,
+            perfumes e muito mais ✨
+        </p>
+
+        <div class="beneficios">
+
+            <div class="item">
+                🛍️ Ofertas Exclusivas
+            </div>
+
+            <div class="item">
+                💄 Produtos Femininos
+            </div>
+
+            <div class="item">
+                🔥 Cupons Diarios
+            </div>
+
+            <div class="item">
+                🚚 Achadinhos Online
+            </div>
+
+        </div>
+
+        <a class="botao"
+           href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19"
+           target="_blank">
+
+            Entrar no Canal
+
+        </a>
+
+        <div class="rodape">
+            Mais de centenas de promocoes todos os dias 💕
+        </div>
+
+    </div>
+<script>
+
+if (window.innerWidth <= 768) {
+    console.log("Usuário está no CELULAR");
+} else {
+    console.log("Usuário está no PC");
+}
+
+</script>
+
+
+</body>
+</html>
