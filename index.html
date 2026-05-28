@@ -2,266 +2,1191 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
-
-    <title>Promocoes Femininas</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achados Femininos – Promoções, Dicas e Tendências</title>
+    <meta name="description" content="Seu canal de promoções femininas: moda, maquiagem, skincare, bolsas, acessórios e perfumes com os melhores preços do dia." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1516054141366003" crossorigin="anonymous"></script>
 
     <style>
-
-        html, body{
-            margin:0;
-            padding:0;
-            width:100%;
-            height:100%;
-            overflow:hidden;
-        }
-        
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        :root {
+            --rosa:    #e8306a;
+            --rosa2:   #ff6b9d;
+            --claro:   #fff0f5;
+            --escuro:  #1a0a12;
+            --cinza:   #6b4d57;
+            --borda:   #f5c0d0;
         }
 
-        body{
-            min-height:100vh;
-            margin:0;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            font-family:'Poppins', sans-serif;
-            overflow-x:hidden;
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-            background:linear-gradient(
-                135deg,
-                #ff4d8d,
-                #ff7eb3,
-                #ffc2d1
-            );
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #fff;
+            color: var(--escuro);
+            overflow-x: hidden;
         }
 
-        .blur1,
-        .blur2{
-            position:absolute;
-            border-radius:50%;
-            filter:blur(80px);
-            opacity:0.35;
+        a { color: inherit; text-decoration: none; }
+
+        /* ── HEADER ── */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--borda);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .blur1{
-            width:300px;
-            height:300px;
-            background:#ffffff;
-            top:-100px;
-            left:-80px;
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
         }
 
-        .blur2{
-            width:350px;
-            height:350px;
-            background:#ff99bb;
-            bottom:-120px;
-            right:-100px;
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--rosa);
+            letter-spacing: -0.5px;
         }
 
-        .card{
-            position:relative;
-            z-index:2;
-        
-            width:90%;
-            max-width:520px;
-        
-            padding:45px 35px;
-        
-            border-radius:30px;
-        
-            background:rgba(255,255,255,0.18);
-        
-            border:1px solid rgba(255,255,255,0.25);
-        
-            backdrop-filter:blur(15px);
-        
-            box-shadow:0 15px 40px rgba(0,0,0,0.15);
-        
-            text-align:center;
-        
-            margin:auto;
-        }    
+        .logo span { color: var(--escuro); }
 
-        .emoji{
-            font-size:70px;
-            margin-bottom:10px;
+        nav { display: flex; gap: 28px; }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--cinza);
+            transition: color .2s;
         }
 
-        h1{
-            font-size:38px;
-            font-weight:700;
-            color:white;
-            margin-bottom:15px;
-            line-height:1.2;
+        nav a:hover { color: var(--rosa); }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #ffe0ec 0%, #fff0f5 50%, #ffd6e8 100%);
+            padding: 72px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .subtitulo{
-            font-size:17px;
-            color:#fff;
-            opacity:0.95;
-            line-height:1.7;
-            margin-bottom:30px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, #ffb3cc55, transparent 70%);
+            top: -150px; right: -150px;
+            border-radius: 50%;
         }
 
-        .beneficios{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:12px;
-            margin-bottom:35px;
+        .hero-badge {
+            display: inline-block;
+            background: var(--rosa);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 20px;
         }
 
-        .item{
-            background:rgba(255,255,255,0.18);
-            padding:14px;
-            border-radius:14px;
-            color:white;
-            font-size:14px;
-            font-weight:500;
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 6vw, 58px);
+            font-weight: 800;
+            color: var(--escuro);
+            line-height: 1.15;
+            margin-bottom: 18px;
         }
 
-        .botao{
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            gap:10px;
-
-            width:100%;
-
-            padding:18px 20px;
-
-            border-radius:16px;
-
-            text-decoration:none;
-
-            background:white;
-            color:#ff2e74;
-
-            font-size:18px;
-            font-weight:700;
-
-            transition:0.3s;
-
-            box-shadow:
-                0 10px 25px rgba(255,255,255,0.25);
+        .hero h1 em {
+            font-style: normal;
+            color: var(--rosa);
         }
 
-        .botao:hover{
-            transform:translateY(-4px) scale(1.02);
+        .hero p {
+            font-size: 17px;
+            color: var(--cinza);
+            max-width: 560px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
         }
 
-        .rodape{
-            margin-top:22px;
-            color:white;
-            opacity:0.9;
-            font-size:13px;
+        .cta-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--rosa);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform .25s, box-shadow .25s;
+            box-shadow: 0 8px 24px #e8306a44;
         }
 
-        @keyframes entrada{
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px #e8306a55; }
 
-            from{
-                opacity:0;
-                transform:translateY(30px) scale(0.95);
-            }
-
-            to{
-                opacity:1;
-                transform:translateY(0) scale(1);
-            }
-
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--rosa);
+            border: 2px solid var(--borda);
+            padding: 13px 28px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: border-color .2s, transform .2s;
         }
 
-        @media(max-width:600px){
+        .btn-secondary:hover { border-color: var(--rosa); transform: translateY(-2px); }
 
-            h1{
-                font-size:30px;
-            }
-
-            .beneficios{
-                grid-template-columns:1fr;
-            }
-
+        /* ── STATS BAR ── */
+        .stats {
+            background: var(--rosa);
+            padding: 18px 24px;
         }
-        
+
+        .stats-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .stat {
+            text-align: center;
+            color: #fff;
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .stat-label { font-size: 12px; opacity: .85; margin-top: 2px; }
+
+        /* ── SECTION TITLES ── */
+        .section { padding: 60px 24px; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+
+        .section-header { margin-bottom: 36px; }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            color: var(--escuro);
+        }
+
+        .section-header p {
+            color: var(--cinza);
+            font-size: 15px;
+            margin-top: 8px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        /* ── CATEGORIAS ── */
+        .cats { background: var(--claro); }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .cat-card {
+            background: #fff;
+            border: 1px solid var(--borda);
+            border-radius: 18px;
+            padding: 22px 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, transform .2s, box-shadow .2s;
+        }
+
+        .cat-card:hover {
+            border-color: var(--rosa);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px #e8306a18;
+        }
+
+        .cat-icon { font-size: 34px; margin-bottom: 10px; }
+
+        .cat-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--escuro);
+        }
+
+        .cat-count {
+            font-size: 11px;
+            color: var(--rosa);
+            margin-top: 4px;
+        }
+
+        /* ── PROMOÇÕES DO DIA ── */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 22px;
+        }
+
+        .promo-card {
+            background: #fff;
+            border: 1px solid var(--borda);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px #e8306a14;
+        }
+
+        .promo-img {
+            background: var(--claro);
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            position: relative;
+        }
+
+        .tag-desconto {
+            position: absolute;
+            top: 12px; left: 12px;
+            background: var(--rosa);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+
+        .tag-hot {
+            position: absolute;
+            top: 12px; right: 12px;
+            background: #ff4500;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+
+        .promo-info { padding: 18px; }
+
+        .promo-cat {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--rosa);
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            margin-bottom: 6px;
+        }
+
+        .promo-nome {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--escuro);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .promo-precos {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .preco-de {
+            font-size: 13px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .preco-por {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--rosa);
+        }
+
+        .btn-ver {
+            display: block;
+            text-align: center;
+            background: var(--claro);
+            color: var(--rosa);
+            border: 1.5px solid var(--borda);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background .2s, border-color .2s;
+        }
+
+        .btn-ver:hover { background: var(--rosa); color: #fff; border-color: var(--rosa); }
+
+        /* ── DICAS / ARTIGOS ── */
+        .dicas { background: var(--claro); }
+
+        .dicas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .dica-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--borda);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .dica-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px #0001; }
+
+        .dica-img {
+            height: 160px;
+            background: linear-gradient(135deg, #ffd6e8, #ffb3cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+        }
+
+        .dica-body { padding: 20px; }
+
+        .dica-tag {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--rosa);
+            text-transform: uppercase;
+            letter-spacing: .8px;
+        }
+
+        .dica-titulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 8px 0;
+            line-height: 1.35;
+            color: var(--escuro);
+        }
+
+        .dica-resumo {
+            font-size: 13px;
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        .dica-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* ── CUPONS ── */
+        .cupons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .cupom-card {
+            border: 2px dashed var(--borda);
+            border-radius: 18px;
+            padding: 22px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: border-color .2s, background .2s;
+            cursor: pointer;
+        }
+
+        .cupom-card:hover { border-color: var(--rosa); background: #fff6f9; }
+
+        .cupom-loja {
+            width: 56px; height: 56px;
+            background: var(--claro);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .cupom-info { flex: 1; }
+
+        .cupom-nome { font-weight: 600; font-size: 15px; color: var(--escuro); }
+
+        .cupom-desc { font-size: 13px; color: var(--cinza); margin: 3px 0 8px; }
+
+        .cupom-codigo {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--rosa);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* ── TENDÊNCIAS ── */
+        .tendencias { background: #fff; }
+
+        .tend-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tend-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: var(--claro);
+            border-radius: 16px;
+            border: 1px solid var(--borda);
+        }
+
+        .tend-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--borda);
+            line-height: 1;
+            min-width: 36px;
+        }
+
+        .tend-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--escuro);
+            margin-bottom: 6px;
+        }
+
+        .tend-content p {
+            font-size: 13px;
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        .tend-tag {
+            margin-left: auto;
+            align-self: flex-start;
+            background: var(--rosa);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        /* ── CTA CANAL ── */
+        .cta-canal {
+            background: linear-gradient(135deg, var(--rosa), #ff6b9d);
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .cta-canal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(26px, 5vw, 42px);
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .cta-canal p {
+            color: rgba(255,255,255,.9);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .btn-wpp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--rosa);
+            padding: 16px 36px;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 700;
+            box-shadow: 0 10px 28px rgba(0,0,0,.15);
+            transition: transform .25s;
+        }
+
+        .btn-wpp:hover { transform: translateY(-4px) scale(1.03); }
+
+        /* ── FAQ ── */
+        .faq { background: var(--claro); }
+
+        .faq-lista { display: flex; flex-direction: column; gap: 12px; }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .faq-pergunta {
+            width: 100%;
+            text-align: left;
+            padding: 18px 22px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--escuro);
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-pergunta .icone {
+            font-size: 18px;
+            transition: transform .3s;
+            color: var(--rosa);
+            flex-shrink: 0;
+        }
+
+        .faq-item.aberto .icone { transform: rotate(45deg); }
+
+        .faq-resposta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .35s;
+            font-size: 14px;
+            color: var(--cinza);
+            line-height: 1.7;
+            padding: 0 22px;
+        }
+
+        .faq-item.aberto .faq-resposta {
+            max-height: 200px;
+            padding: 0 22px 18px;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--escuro);
+            color: rgba(255,255,255,.7);
+            padding: 40px 24px 28px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: space-between;
+        }
+
+        .footer-brand .logo { color: #fff; margin-bottom: 8px; }
+        .footer-brand p { font-size: 13px; max-width: 260px; line-height: 1.6; }
+
+        .footer-links h4 { color: #fff; font-size: 14px; margin-bottom: 14px; }
+        .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .footer-links li a { font-size: 13px; color: rgba(255,255,255,.6); transition: color .2s; }
+        .footer-links li a:hover { color: var(--rosa2); }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 28px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* ── AD SLOT ── */
+        .ad-slot {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        .ad-label {
+            font-size: 10px;
+            color: #bbb;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .stats-inner { gap: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .cta-group { flex-direction: column; align-items: center; }
+            .cat-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero > * { animation: fadeUp .6s ease both; }
+        .hero .hero-badge { animation-delay: .05s; }
+        .hero h1 { animation-delay: .15s; }
+        .hero p  { animation-delay: .25s; }
+        .hero .cta-group { animation-delay: .35s; }
     </style>
 </head>
 
-
-
 <body>
 
-    <div class="blur1"></div>
-    <div class="blur2"></div>
-
-    <div class="card">
-
-        <div class="emoji">
-            💖
-        </div>
-
-        <h1>
-            Canal de Promoções
-        </h1>
-
-        <p class="subtitulo">
-            Receba diariamente ofertas incriveis de moda,
-            maquiagem, skincare, bolsas, acessorios,
-            perfumes e muito mais ✨
-        </p>
-
-        <div class="beneficios">
-
-            <div class="item">
-                🛍️ Ofertas Exclusivas
-            </div>
-
-            <div class="item">
-                💄 Produtos Femininos
-            </div>
-
-            <div class="item">
-                🔥 Cupons Diarios
-            </div>
-
-            <div class="item">
-                🚚 Achadinhos Online
-            </div>
-
-        </div>
-
-        <a class="botao"
-           href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19"
-           target="_blank">
-
-            Entrar no Canal
-
-        </a>
-
-        <div class="rodape">
-            Mais de centenas de promocoes todos os dias 💕
-        </div>
-
+<!-- ── HEADER ── -->
+<header>
+    <div class="header-inner">
+        <div class="logo">Achados<span>Femininos</span></div>
+        <nav>
+            <a href="#promocoes">Promoções</a>
+            <a href="#dicas">Dicas</a>
+            <a href="#cupons">Cupons</a>
+            <a href="#tendencias">Tendências</a>
+            <a href="#canal">Nosso Canal</a>
+        </nav>
     </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+    <div class="hero-badge">✨ Atualizado hoje</div>
+    <h1>As melhores <em>promoções</em><br>do dia para você</h1>
+    <p>Moda, maquiagem, skincare, bolsas, acessórios e perfumes com preços imperdíveis. Garimpamos para você todos os dias.</p>
+    <div class="cta-group">
+        <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-primary">
+            💬 Entrar no Canal Grátis
+        </a>
+        <a href="#promocoes" class="btn-secondary">
+            🔥 Ver Promoções
+        </a>
+    </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats">
+    <div class="stats-inner">
+        <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Promoções por semana</div></div>
+        <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Lojas monitoradas</div></div>
+        <div class="stat"><div class="stat-num">30%</div><div class="stat-label">Desconto médio</div></div>
+        <div class="stat"><div class="stat-num">10k+</div><div class="stat-label">Membros do canal</div></div>
+    </div>
+</div>
+
+<!-- ── AD SLOT 1 ── -->
+<div style="background:#fff; padding: 16px 24px;">
+    <div class="ad-slot">
+        <div class="ad-label">Publicidade</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1516054141366003"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<!-- ── CATEGORIAS ── -->
+<section class="section cats" id="categorias">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Navegue por Categoria</h2>
+            <p>Encontre promoções no segmento que você mais ama.</p>
+        </div>
+        <div class="cat-grid">
+            <div class="cat-card"><div class="cat-icon">👗</div><div class="cat-name">Moda</div><div class="cat-count">128 offers</div></div>
+            <div class="cat-card"><div class="cat-icon">💄</div><div class="cat-name">Maquiagem</div><div class="cat-count">94 ofertas</div></div>
+            <div class="cat-card"><div class="cat-icon">🧴</div><div class="cat-name">Skincare</div><div class="cat-count">76 ofertas</div></div>
+            <div class="cat-card"><div class="cat-icon">👜</div><div class="cat-name">Bolsas</div><div class="cat-count">52 ofertas</div></div>
+            <div class="cat-card"><div class="cat-icon">💍</div><div class="cat-name">Acessórios</div><div class="cat-count">63 ofertas</div></div>
+            <div class="cat-card"><div class="cat-icon">🌸</div><div class="cat-name">Perfumes</div><div class="cat-count">41 ofertas</div></div>
+            <div class="cat-card"><div class="cat-icon">👠</div><div class="cat-name">Calçados</div><div class="cat-count">88 ofertas</div></div>
+            <div class="cat-card"><div class="cat-icon">🧘</div><div class="cat-name">Fitness</div><div class="cat-count">35 ofertas</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ── PROMOÇÕES DO DIA ── -->
+<section class="section" id="promocoes" style="background:#fff;">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>🔥 Promoções do Dia</h2>
+            <p>Seleção diária dos melhores preços encontrados na internet.</p>
+        </div>
+        <div class="promo-grid">
+
+            <div class="promo-card">
+                <div class="promo-img">
+                    👗
+                    <span class="tag-desconto">-55%</span>
+                    <span class="tag-hot">🔥 Hot</span>
+                </div>
+                <div class="promo-info">
+                    <div class="promo-cat">Moda</div>
+                    <div class="promo-nome">Vestido Floral Midi com Amarração – Várias Cores</div>
+                    <div class="promo-precos">
+                        <span class="preco-de">R$ 149,90</span>
+                        <span class="preco-por">R$ 67,90</span>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-ver">Ver Oferta no Canal</a>
+                </div>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-img">
+                    💄
+                    <span class="tag-desconto">-40%</span>
+                </div>
+                <div class="promo-info">
+                    <div class="promo-cat">Maquiagem</div>
+                    <div class="promo-nome">Kit Base + Corretivo Líquido Alta Cobertura</div>
+                    <div class="promo-precos">
+                        <span class="preco-de">R$ 89,90</span>
+                        <span class="preco-por">R$ 53,90</span>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-ver">Ver Oferta no Canal</a>
+                </div>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-img">
+                    🧴
+                    <span class="tag-desconto">-30%</span>
+                    <span class="tag-hot">⚡ Relâmpago</span>
+                </div>
+                <div class="promo-info">
+                    <div class="promo-cat">Skincare</div>
+                    <div class="promo-nome">Sérum Vitamina C Concentrado + Protetor Solar FPS 50</div>
+                    <div class="promo-precos">
+                        <span class="preco-de">R$ 119,90</span>
+                        <span class="preco-por">R$ 83,90</span>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-ver">Ver Oferta no Canal</a>
+                </div>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-img">
+                    👜
+                    <span class="tag-desconto">-45%</span>
+                </div>
+                <div class="promo-info">
+                    <div class="promo-cat">Bolsas</div>
+                    <div class="promo-nome">Bolsa Tiracolo Couro Sintético Alça Ajustável</div>
+                    <div class="promo-precos">
+                        <span class="preco-de">R$ 179,90</span>
+                        <span class="preco-por">R$ 98,90</span>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-ver">Ver Oferta no Canal</a>
+                </div>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-img">
+                    🌸
+                    <span class="tag-desconto">-35%</span>
+                </div>
+                <div class="promo-info">
+                    <div class="promo-cat">Perfumes</div>
+                    <div class="promo-nome">Perfume Importado Feminino 100ml – Floral Amadeirado</div>
+                    <div class="promo-precos">
+                        <span class="preco-de">R$ 249,00</span>
+                        <span class="preco-por">R$ 161,90</span>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-ver">Ver Oferta no Canal</a>
+                </div>
+            </div>
+
+            <div class="promo-card">
+                <div class="promo-img">
+                    👠
+                    <span class="tag-desconto">-50%</span>
+                    <span class="tag-hot">🔥 Hot</span>
+                </div>
+                <div class="promo-info">
+                    <div class="promo-cat">Calçados</div>
+                    <div class="promo-nome">Sandália Salto Bloco Confortável – Nude/Preto</div>
+                    <div class="promo-precos">
+                        <span class="preco-de">R$ 199,90</span>
+                        <span class="preco-por">R$ 99,90</span>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-ver">Ver Oferta no Canal</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── AD SLOT 2 ── -->
+<div style="background: var(--claro); padding: 16px 24px;">
+    <div class="ad-slot">
+        <div class="ad-label">Publicidade</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1516054141366003"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<!-- ── CUPONS ── -->
+<section class="section" id="cupons" style="background:#fff;">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>🏷️ Cupons Ativos Hoje</h2>
+            <p>Copie o código e economize ainda mais nas suas compras favoritas.</p>
+        </div>
+        <div class="cupons-grid">
+            <div class="cupom-card">
+                <div class="cupom-loja">🛒</div>
+                <div class="cupom-info">
+                    <div class="cupom-nome">Shopee – Moda Feminina</div>
+                    <div class="cupom-desc">15% OFF em roupas selecionadas</div>
+                    <div class="cupom-codigo">🏷️ MODA15</div>
+                </div>
+            </div>
+            <div class="cupom-card">
+                <div class="cupom-loja">💅</div>
+                <div class="cupom-info">
+                    <div class="cupom-nome">Sephora – Skincare</div>
+                    <div class="cupom-desc">20% OFF acima de R$ 150</div>
+                    <div class="cupom-codigo">🏷️ SKIN20</div>
+                </div>
+            </div>
+            <div class="cupom-card">
+                <div class="cupom-loja">👟</div>
+                <div class="cupom-info">
+                    <div class="cupom-nome">Netshoes – Calçados</div>
+                    <div class="cupom-desc">10% OFF na primeira compra</div>
+                    <div class="cupom-codigo">🏷️ PRIMEIRAO10</div>
+                </div>
+            </div>
+            <div class="cupom-card">
+                <div class="cupom-loja">🌹</div>
+                <div class="cupom-info">
+                    <div class="cupom-nome">Epoca Cosméticos</div>
+                    <div class="cupom-desc">R$ 30 OFF acima de R$ 200</div>
+                    <div class="cupom-codigo">🏷️ BELEZA30</div>
+                </div>
+            </div>
+            <div class="cupom-card">
+                <div class="cupom-loja">👜</div>
+                <div class="cupom-info">
+                    <div class="cupom-nome">Renner – Bolsas & Acessórios</div>
+                    <div class="cupom-desc">25% OFF em bolsas novas</div>
+                    <div class="cupom-codigo">🏷️ BOLSA25</div>
+                </div>
+            </div>
+            <div class="cupom-card">
+                <div class="cupom-loja">✨</div>
+                <div class="cupom-info">
+                    <div class="cupom-nome">Dafiti – Roupas & Calçados</div>
+                    <div class="cupom-desc">Frete grátis acima de R$ 99</div>
+                    <div class="cupom-codigo">🏷️ FRETEGRATIS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── DICAS ── -->
+<section class="section dicas" id="dicas">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>💡 Dicas & Conteúdo</h2>
+            <p>Aprenda a economizar mais e fazer as melhores escolhas de beleza e moda.</p>
+        </div>
+        <div class="dicas-grid">
+
+            <article class="dica-card">
+                <div class="dica-img">✨</div>
+                <div class="dica-body">
+                    <div class="dica-tag">Skincare</div>
+                    <h3 class="dica-titulo">5 produtos de skincare que valem cada centavo – mesmo em promoção</h3>
+                    <p class="dica-resumo">Sérum de vitamina C, protetor solar FPS 50, ácido hialurônico e mais: confira os itens que nunca devem ficar de fora da sua rotina de cuidados com a pele.</p>
+                    <div class="dica-meta">📅 Hoje &nbsp;•&nbsp; 4 min de leitura</div>
+                </div>
+            </article>
+
+            <article class="dica-card">
+                <div class="dica-img">👗</div>
+                <div class="dica-body">
+                    <div class="dica-tag">Moda</div>
+                    <h3 class="dica-titulo">Como montar looks completos gastando menos de R$ 150</h3>
+                    <p class="dica-resumo">Com as promoções certas e algumas peças-chave no armário, é possível criar looks modernos e versáteis sem gastar muito. Veja nossas dicas práticas.</p>
+                    <div class="dica-meta">📅 Ontem &nbsp;•&nbsp; 5 min de leitura</div>
+                </div>
+            </article>
+
+            <article class="dica-card">
+                <div class="dica-img">💄</div>
+                <div class="dica-body">
+                    <div class="dica-tag">Maquiagem</div>
+                    <h3 class="dica-titulo">Maquiagem duradoura: os truques que ninguém te contou</h3>
+                    <p class="dica-resumo">Primer, técnica de bake, spray fixador e a ordem correta dos produtos fazem toda a diferença para manter a maquiagem impecável por mais horas.</p>
+                    <div class="dica-meta">📅 2 dias atrás &nbsp;•&nbsp; 6 min de leitura</div>
+                </div>
+            </article>
+
+            <article class="dica-card">
+                <div class="dica-img">🏷️</div>
+                <div class="dica-body">
+                    <div class="dica-tag">Economia</div>
+                    <h3 class="dica-titulo">Como usar cupons e cashback para economizar até 40% nas compras</h3>
+                    <p class="dica-resumo">Combinando cupons, cashback e as promoções do nosso canal, você pode economizar uma quantia surpreendente todos os meses. Aprenda a estratégia completa.</p>
+                    <div class="dica-meta">📅 3 dias atrás &nbsp;•&nbsp; 7 min de leitura</div>
+                </div>
+            </article>
+
+            <article class="dica-card">
+                <div class="dica-img">🌸</div>
+                <div class="dica-body">
+                    <div class="dica-tag">Perfumes</div>
+                    <h3 class="dica-titulo">Guia para escolher o perfume certo para cada ocasião</h3>
+                    <p class="dica-resumo">Florais, amadeirados, cítricos ou orientais: entenda as famílias olfativas e descubra qual fragrância combina com seu estilo e o momento do dia.</p>
+                    <div class="dica-meta">📅 4 dias atrás &nbsp;•&nbsp; 5 min de leitura</div>
+                </div>
+            </article>
+
+            <article class="dica-card">
+                <div class="dica-img">👜</div>
+                <div class="dica-body">
+                    <div class="dica-tag">Acessórios</div>
+                    <h3 class="dica-titulo">As bolsas que são tendência e ainda estão em promoção</h3>
+                    <p class="dica-resumo">Mini bags, totes e shoulder bags dominam as passarelas. Veja os modelos mais cobiçados do momento e onde encontrá-los com desconto.</p>
+                    <div class="dica-meta">📅 5 dias atrás &nbsp;•&nbsp; 4 min de leitura</div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── TENDÊNCIAS ── -->
+<section class="section tendencias" id="tendencias">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>📈 Tendências da Semana</h2>
+            <p>O que está bombando em moda e beleza agora mesmo.</p>
+        </div>
+        <div class="tend-lista">
+            <div class="tend-item">
+                <div class="tend-num">01</div>
+                <div class="tend-content">
+                    <h3>Vestidos Assimétricos com Recortes</h3>
+                    <p>Os modelos com barras irregulares e recortes estratégicos dominaram as redes sociais esta semana. Muito versáteis, combinam com salto ou tênis chunky.</p>
+                </div>
+                <div class="tend-tag">🔥 Viral</div>
+            </div>
+            <div class="tend-item">
+                <div class="tend-num">02</div>
+                <div class="tend-content">
+                    <h3>Skincare à Base de Peptídeos</h3>
+                    <p>Os peptídeos estão substituindo o retinol para quem tem pele sensível. Além de anti-envelhecimento, reduzem inflamação e melhoram a textura da pele.</p>
+                </div>
+                <div class="tend-tag">✨ Em alta</div>
+            </div>
+            <div class="tend-item">
+                <div class="tend-num">03</div>
+                <div class="tend-content">
+                    <h3>Blush Draping – A Técnica que Voltou</h3>
+                    <p>Aplicar o blush desde as maçãs do rosto até as têmporas virou febre após tutoriais virais no TikTok e Instagram. Eleva o rosto e dá aparência saudável.</p>
+                </div>
+                <div class="tend-tag">💄 Tendência</div>
+            </div>
+            <div class="tend-item">
+                <div class="tend-num">04</div>
+                <div class="tend-content">
+                    <h3>Bolsas Bucket em Couro Vegano</h3>
+                    <p>Espaçosas, práticas e sustentáveis: as bucket bags em couro vegano são o item de moda consciente que toda mulher moderna quer ter neste semestre.</p>
+                </div>
+                <div class="tend-tag">🌿 Sustentável</div>
+            </div>
+            <div class="tend-item">
+                <div class="tend-num">05</div>
+                <div class="tend-content">
+                    <h3>Perfumes de Nicho com Preços Acessíveis</h3>
+                    <p>Marcas independentes nacionais entregam qualidade de nicho a preços muito menores que as grandes marcas importadas. Descubra os queridinhos do momento.</p>
+                </div>
+                <div class="tend-tag">🌸 Novidade</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── AD SLOT 3 ── -->
+<div style="background:#fff; padding: 16px 24px;">
+    <div class="ad-slot">
+        <div class="ad-label">Publicidade</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1516054141366003"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<!-- ── CTA CANAL ── -->
+<section class="cta-canal" id="canal">
+    <h2>💬 Não perca nenhuma promoção</h2>
+    <p>Entre no nosso canal do WhatsApp e receba diariamente as melhores ofertas selecionadas para você.</p>
+    <a href="https://whatsapp.com/channel/0029VbBZnksBA1ex66e3Bn19" target="_blank" class="btn-wpp">
+        💬 Entrar no Canal Grátis
+    </a>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section faq">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>❓ Perguntas Frequentes</h2>
+            <p>Tire suas dúvidas sobre o canal e como aproveitá-lo melhor.</p>
+        </div>
+        <div class="faq-lista">
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    O canal é realmente gratuito?
+                    <span class="icone">+</span>
+                </button>
+                <div class="faq-resposta">Sim! Entrar e participar do nosso canal de promoções no WhatsApp é completamente gratuito. Não cobramos nada para enviar as ofertas do dia.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    Com que frequência são enviadas promoções?
+                    <span class="icone">+</span>
+                </button>
+                <div class="faq-resposta">Enviamos promoções diariamente, geralmente entre 7h e 21h. Nos dias de grandes eventos como Black Friday, o volume aumenta bastante.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    Como sei que as ofertas são confiáveis?
+                    <span class="icone">+</span>
+                </button>
+                <div class="faq-resposta">Todas as promoções são verificadas manualmente antes de serem publicadas. Trabalhamos apenas com lojas reconhecidas e com boa reputação no mercado.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    Os cupons divulgados funcionam mesmo?
+                    <span class="icone">+</span>
+                </button>
+                <div class="faq-resposta">Testamos os cupons no momento da publicação. Como podem expirar rapidamente, recomendamos usá-los assim que receber a notificação do canal.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="toggleFaq(this)">
+                    Posso sugerir uma loja para monitorar?
+                    <span class="icone">+</span>
+                </button>
+                <div class="faq-resposta">Claro! Mande uma mensagem pelo canal com a sugestão. Analisamos e, se a loja for confiável, passamos a monitorar as promoções dela.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="logo" style="font-family:'Playfair Display',serif; font-size:20px; color:#fff; margin-bottom:8px;">AchadosFemininos</div>
+            <p>Seu destino diário para as melhores promoções de moda, beleza e estilo. Economize com inteligência.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Categorias</h4>
+            <ul>
+                <li><a href="#categorias">Moda</a></li>
+                <li><a href="#categorias">Maquiagem</a></li>
+                <li><a href="#categorias">Skincare</a></li>
+                <li><a href="#categorias">Bolsas</a></li>
+                <li><a href="#categorias">Perfumes</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Conteúdo</h4>
+            <ul>
+                <li><a href="#dicas">Dicas de Beleza</a></li>
+                <li><a href="#tendencias">Tendências</a></li>
+                <li><a href="#cupons">Cupons</a></li>
+                <li><a href="#canal">Nosso Canal</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Informações</h4>
+            <ul>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2025 AchadosFemininos. Todos os direitos reservados. As promoções são verificadas no momento da publicação e podem expirar sem aviso.
+    </div>
+</footer>
+
 <script>
-
-if (window.innerWidth <= 768) {
-    console.log("Usuário está no CELULAR");
-} else {
-    console.log("Usuário está no PC");
+function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('aberto');
+    document.querySelectorAll('.faq-item.aberto').forEach(i => i.classList.remove('aberto'));
+    if (!isOpen) item.classList.add('aberto');
 }
-
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1516054141366003"
-     crossorigin="anonymous">
-</script>
-
 
 </body>
 </html>
